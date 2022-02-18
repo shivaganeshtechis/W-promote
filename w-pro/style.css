@@ -166,6 +166,61 @@ section.main {
   margin-bottom: 11%;
   margin-top: 2%;
 }
+
+/******Sign Up******/
+
+.popup {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.popup .popup-inner {
+  background-color: white;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  left: 35%;
+  width: 30%;
+  top: 15%;
+}
+
+.popup .popup-inner h2 {
+  position: relative;
+  color: black;
+  top: 5%;
+}
+.popup .popup-input {
+  display: block;
+  top: 8%;
+  position: relative;
+}
+
+.popup input {
+  width: 70%;
+  height: 4vh;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.popup-input p {
+  color: black;
+}
+.popup .popup-input button {
+  width: 73%;
+  background-color: black;
+  color: white;
+  font-size: larger;
+  border: 0;
+  height: 40px;
+  border-radius: 10px;
+}
+
 /*************************************
 **************************************
 ********** Meadia Screen **************
@@ -188,6 +243,10 @@ section.main {
   .patents {
     grid-template-columns: repeat(2, 1fr);
   }
+  .popup .popup-inner {
+    left: 25%;
+    width: 50%;
+    }
 }
 
 @media screen and (max-width: 550px) {
@@ -233,4 +292,8 @@ section.main {
   .footer-bar p {
     word-spacing: 0px;
   }
+  .popup .popup-inner {
+    left: 20%;
+    width: 60%;
+    }
 }
