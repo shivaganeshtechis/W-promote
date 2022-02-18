@@ -105,6 +105,7 @@ section.main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
+  margin-left: 1%;
 }
 .patent-box {
   width: 90%;
@@ -165,15 +166,28 @@ section.main {
 }
 /*************************************
 **************************************
-******* Meadia Screen ****************/
+********** Meadia Screen **************
+**************************************
+**************************************/
 
 
-@media screen and (max-width: 450px) {
-  .patent{
+@media screen and (max-width: 500px) {
+  #nav-img {
+		margin-left: 4%;
+		width: 25%;
+		height: 25px;
+	}
+  header img {
+    width: 25%;
+    height: 25px;
+}
+	.header-nav-bar p{
+
+	}
+
+  .patents{
     grid-template-columns: repeat(1, 1fr);
-    /* grid-template-columns: repeat(3, 1fr); */
-
-  
+    margin-left: 4%;
   }
   
 }
