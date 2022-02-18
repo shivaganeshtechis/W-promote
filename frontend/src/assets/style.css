@@ -1,141 +1,231 @@
-/*
-Common
-************************************/
-
-html,
-body {
-    height: 100%;
-    font-family: sans-serif;
+@import url(//db.onlinewebfonts.com/c/d02befc8fdd8e5315fb21fa7f38fd55a?family=Shree+Devanagari+714);
+@font-face {
+    font-family: 'Shree Devanagari 714';
+    src: url('//db.onlinewebfonts.com/t/d02befc8fdd8e5315fb21fa7f38fd55a.eot');
+    src: url('//db.onlinewebfonts.com/t/d02befc8fdd8e5315fb21fa7f38fd55a.eot?#iefix') format('embedded-opentype'),
+        url('//db.onlinewebfonts.com/t/d02befc8fdd8e5315fb21fa7f38fd55a.woff2') format('woff2'),
+        url('//db.onlinewebfonts.com/t/d02befc8fdd8e5315fb21fa7f38fd55a.woff') format('woff'),
+        url('//db.onlinewebfonts.com/t/d02befc8fdd8e5315fb21fa7f38fd55a.ttf') format('truetype'),
+        url('//db.onlinewebfonts.com/t/d02befc8fdd8e5315fb21fa7f38fd55a.svg#Shree Devanagari 714') format('svg');
 }
-
-.content {
-    width: 600px;
-    height: 100%;
-    margin: 0 auto;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-}
-
-@media screen and (max-width: 500px) {
-}
-
-/*
-Posts
-************************************/
-
-.post_form {
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
-}
-
-.post_form input {
-    width: 96%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-.post_form textarea {
-    width: 96%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-.post_form .upload-area {
-    width: 96%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: center;
-}
-
-.post_form button {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-}
-
-.upload-image {
-    width: 50%;
-}
-
-.posts ul {
+body,
+html {
+    margin: 0;
     padding: 0;
-}
-
-.posts li {
-    position: relative;
-    display: flex;
-    border-bottom: 1px solid #ccc;
-    padding: 20px 40px;
-    list-style: none;
-}
-
-.posts li .menu_icon {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    right: 30px;
-    top: 18px;
-    cursor: pointer;
-}
-
-.posts li .menu {
-    position: absolute;
-    top: 40px;
-    right: 15px;
-    border: 1px solid #ccc;
-    background-color: white;
-    padding: 10px 15px;
-    font-size: 13px;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.posts li img {
+    background-image: linear-gradient(rgb(35, 64, 89), rgb(0, 0, 0));
     width: 100%;
+    color: white;
+    font-family: damascus;
+}
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+#nav-img {
+    margin-left: 3%;
+}
+header img {
+    width: 15%;
 }
 
-.posts li .menu a {
-    text-decoration: none;
+header .header-nav {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    width: 35%;
+    margin-right: 3%;
+}
+header .header-nav-bar {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
 }
 
-.posts li .logo {
-    flex-basis: 15%;
+.main-description {
+    display: flex;
+}
+section.main {
+    width: 100%;
+    margin-top: 5%;
+    margin: h;
+}
+.main-header {
+    margin: auto 4%;
+}
+.main-header h1 {
+    font-size: 18px;
+}
+.main-description img {
+    width: 4%;
+}
+.main-aerospace {
+    margin-left: 2%;
+}
+.main-aerospace h3 {
+    margin: 0;
+    padding: 0px 0 10px;
+}
+.main-aerospace p {
+    margin: 0%;
 }
 
-.posts li .logo img {
-    width: 60%;
+.main-input-button {
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: end;
 }
 
-.posts li .name_body {
-    flex-basis: 85%;
+.main-input-button input[type='text'] {
+    width: 30%;
+    padding: 0.3%;
+    border: 4px solid white;
+    background-color: rgba(255, 255, 255, 0%);
 }
 
-.posts li .name_body .name {
-    font-weight: bold;
-    margin-bottom: 10px;
+.main-input-button button {
+    background-color: rgba(255, 255, 255, 0%);
+    border: 0;
+    font-size: 17px;
+    color: white;
 }
 
-.posts li .name_body .body {
-    margin: 10px 0px;
+.main-header hr {
+    border: 1.5px solid;
+    margin: 5% auto;
+}
+.patents {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    margin-left: 1%;
+}
+.patent-box {
+    width: 90%;
+    position: relative;
+    border: 3px solid white;
+    border-radius: 10px;
+    margin-bottom: 7%;
+    /* text-align: center; */
+}
+.patent-box img {
+    width: 92%;
+    margin: 4%;
+}
+.patent-box h3 {
+    margin: 0% 0% 0% 3%;
+}
+.patent-box p {
+    margin: 5% 0 5% 3%;
+    font-size: 14px;
+}
+.patent-box-btn button {
+    width: 47%;
+    border: 0;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+}
+.patent-box-btn {
+    width: 100%;
+    margin: 7% 2%;
 }
 
-.posts li .name_body .datetime {
-    color: gray;
-    margin-bottom: 10px;
+#read-more {
+    background-color: #f15a29;
 }
-
-.no-post {
+#wish-list {
+    background-color: #117ec4;
+}
+.footer-bar {
+    width: 100%;
     text-align: center;
 }
+.footer-bar button {
+    width: 20%;
+    height: 55px;
+    font-size: 18px;
+    background-color: #0066b3;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    margin: 5%;
+}
+.footer-bar p {
+    word-spacing: 5px;
+}
+.footer-right {
+    text-align: center;
+    margin-bottom: 11%;
+    margin-top: 2%;
+}
+/*************************************
+**************************************
+********** Meadia Screen **************
+**************************************
+**************************************/
 
-.no-post p {
-    margin: 0px 0px;
+@media screen and (max-width: 950px) {
+    header .header-nav {
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        width: 50%;
+    }
+    header .header-nav-bar {
+        width: 85%;
+    }
+    header img {
+        width: 25%;
+    }
+    .patents {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.loading {
-    text-align: center;
+@media screen and (max-width: 550px) {
+    #nav-img {
+        margin-left: 4%;
+        width: 25%;
+        height: 25px;
+    }
+    header img {
+        width: 25%;
+        height: 25px;
+    }
+    .header-nav-bar p {
+        margin: 0%;
+        font-size: 10px;
+    }
+    .main-header h1 {
+        font-size: 13px;
+    }
+    .main-description img {
+        width: 9%;
+        height: 45px;
+    }
+    .main-aerospace h3 {
+        font-size: 15px;
+        padding: 0;
+    }
+    .main-aerospace p {
+        font-size: 10px;
+    }
+    .main-input-button input[type='text'] {
+        width: 40%;
+        padding: 0.3%;
+        border: 2px solid white;
+    }
+    .patents {
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 4%;
+    }
+    .footer-bar button {
+        width: 50%;
+    }
+    .footer-bar p {
+        word-spacing: 0px;
+    }
 }

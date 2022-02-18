@@ -1,87 +1,67 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import Loading from '../assets/img/loading.gif';
-import postImage from '../assets/img/newspaper-icon-png.jpg';
-import PostForm from '../components/Posts/PostForm';
-import Post from '../components/Posts/Post';
-import { fetchPosts } from '../reducks/posts/operations';
-import { getPosts } from '../reducks/posts/selectors';
+import React, { useEffect, useState } from 'react';
+import Header from '../components/Header';
+import plane from '../assets/img/plane.png';
+
+const axios = require('axios');
 
 const Home = () => {
-    const dispatch = useDispatch();
-    const selector = useSelector(state => state);
-    const posts = getPosts(selector);
-    let [page, setPage] = useState(1);
-    const [isLoading, setIsLoading] = useState(false);
-
+    const [students, setStudents] = useState(null);
+    const patentApiIndexConst = {
+        id: 0,
+        image: 10,
+        name: 2,
+        discription: 3
+    };
     useEffect(() => {
-        dispatch(fetchPosts({ page }));
-        // eslint-disable-next-line
-    }, []);
-
-    // Infinite Scroll Pagination Flow
-    const observer = useRef();
-
-    // Reference to a very last post element
-    const lastPostElement = useCallback(
-        node => {
-            if (isLoading) return;
-            // Disconnect reference from previous element, so that new last element is hook up correctly
-            if (observer.current) {
-                observer.current.disconnect();
-            }
-
-            // Observe changes in the intersection of target element
-            observer.current = new IntersectionObserver(async entries => {
-                // That means that we are on the page somewhere, In our case last element of the page
-                if (entries[0].isIntersecting && posts.next) {
-                    // Proceed fetch new page
-                    setIsLoading(true);
-                    setPage(++page);
-                    await dispatch(fetchPosts({ page }));
-                    setIsLoading(false);
-                }
+        axios
+            .get('https://api.nasa.gov/techtransfer/patent/?engine&api_key=VN6vYYdFF8xFWzpLWrkziYlITvRz2CHhd7weRl0O')
+            .then(function (response) {
+                setStudents(response.data);
+            })
+            .catch(function (error) {
+                console.log(error);
             });
-
-            // Reconnect back with the new last post element
-            if (node) {
-                observer.current.observe(node);
-            }
-        },
-        // eslint-disable-next-line
-        [posts.next]
-    );
-
+    }, []);
     return (
-        <section className="content">
-            <PostForm />
-            <section className="posts">
-                {posts.results.length > 0 ? (
-                    <ul>
-                        {posts.results.map((post, index) => {
-                            return (
-                                <Post
-                                    ref={index === posts.results.length - 1 ? lastPostElement : null}
-                                    key={post.id}
-                                    post={post}
-                                />
-                            );
-                        })}
-                    </ul>
-                ) : (
-                    <div className="no-post">
-                        <img width="72" src={postImage} alt="icon" />
-                        <p>No posts here yet...</p>
+        <>
+            <Header />
+            <section class="main">
+                <div class="main-header">
+                    <h1>PATENT PORTFOLIO</h1>
+                    <div class="main-description">
+                        <img src={plane} alt="" />
+                        <div class="main-aerospace">
+                            <h3>AEROSPACE</h3>
+                            <p>
+                                The design, construction and operation of aircraft based on the scientific study or art
+                                of flight.
+                            </p>
+                        </div>
                     </div>
-                )}
-                {isLoading && (
-                    <div className="loading">
-                        <img src={Loading} className="" alt="" />
+                    <div class="main-input-button">
+                        <input type="text" />
+                        <button>GO</button>
                     </div>
-                )}
+                    <hr />
+                    <div class="patents">
+                        {students &&
+                            students['results'].map((student, index) => {
+                                return (
+                                    <div class="patent-box" key={index}>
+                                        <img src={student[patentApiIndexConst['image']]} alt="" />
+                                        <h3>{student[patentApiIndexConst['name']]}</h3>
+                                        <p>{student[patentApiIndexConst['discription']]}</p>
+                                        <div class="patent-box-btn">
+                                            <button id="read-more">Read More</button>
+                                            <button id="wish-list">+ Add Wishlist</button>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                    </div>
+                </div>
             </section>
-        </section>
+        </>
     );
 };
-
 export default Home;
