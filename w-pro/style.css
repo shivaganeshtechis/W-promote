@@ -163,6 +163,8 @@ section.main {
 }
 .footer-right {
   text-align: center;
+  margin-bottom: 11%;
+  margin-top: 2%;
 }
 /*************************************
 **************************************
@@ -170,24 +172,65 @@ section.main {
 **************************************
 **************************************/
 
+@media screen and (max-width: 950px) {
+  header .header-nav {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    width: 50%;
+  }
+  header .header-nav-bar {
+    width: 85%;
+  }
+  header img {
+    width: 25%;
+  }
+  .patents {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   #nav-img {
-		margin-left: 4%;
-		width: 25%;
-		height: 25px;
-	}
+    margin-left: 4%;
+    width: 25%;
+    height: 25px;
+  }
   header img {
     width: 25%;
     height: 25px;
-}
-	.header-nav-bar p{
-
-	}
-
-  .patents{
+  }
+  .header-nav-bar p {
+    margin: 0%;
+    font-size: 10px;
+  }
+  .main-header h1 {
+    font-size: 13px;
+  }
+  .main-description img {
+    width: 9%;
+    height: 45px;
+  }
+  .main-aerospace h3 {
+    font-size: 15px;
+    padding: 0;
+  }
+  .main-aerospace p {
+    font-size: 10px;
+  }
+  .main-input-button input[type="text"] {
+    width: 40%;
+    padding: 0.3%;
+    border: 2px solid white;
+  }
+  .patents {
     grid-template-columns: repeat(1, 1fr);
     margin-left: 4%;
   }
-  
+  .footer-bar button {
+    width: 50%;
+  }
+  .footer-bar p {
+    word-spacing: 0px;
+  }
 }
