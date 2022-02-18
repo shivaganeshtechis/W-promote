@@ -1,4 +1,18 @@
 @import url(//db.onlinewebfonts.com/c/d02befc8fdd8e5315fb21fa7f38fd55a?family=Shree+Devanagari+714);
+@font-face {
+  font-family: "Shree Devanagari 714";
+  src: url("//db.onlinewebfonts.com/t/d02befc8fdd8e5315fb21fa7f38fd55a.eot");
+  src: url("//db.onlinewebfonts.com/t/d02befc8fdd8e5315fb21fa7f38fd55a.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/d02befc8fdd8e5315fb21fa7f38fd55a.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/d02befc8fdd8e5315fb21fa7f38fd55a.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/d02befc8fdd8e5315fb21fa7f38fd55a.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/d02befc8fdd8e5315fb21fa7f38fd55a.svg#Shree Devanagari 714")
+      format("svg");
+}
 body,
 html {
   margin: 0;
@@ -6,7 +20,7 @@ html {
   background-image: linear-gradient(rgb(35, 64, 89), rgb(0, 0, 0));
   width: 100%;
   color: white;
-  font-family: Shree Devanagari 714;
+  font-family: damascus;
 }
 header {
   width: 100%;
@@ -91,7 +105,6 @@ section.main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
-  margin-left: 1%;
 }
 .patent-box {
   width: 90%;
@@ -149,4 +162,18 @@ section.main {
 }
 .footer-right {
   text-align: center;
+}
+/*************************************
+**************************************
+******* Meadia Screen ****************/
+
+
+@media screen and (max-width: 450px) {
+  .patent{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+
+  
+  }
+  
 }
