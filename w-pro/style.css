@@ -171,7 +171,7 @@ section.main {
 @media screen and (max-width: 450px) {
   .patent{
     grid-template-columns: repeat(1, 1fr);
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
 
   
   }
