@@ -66,17 +66,31 @@ export default class API {
             { params: query, requireToken: true }
         );
     };
+    getFavorites = async () => {
+        const favorites = await api
+            .get('/favorites/', { requireToken: true })
+            .then(response => {
+                return response.data;
+            })
+            .catch(error => {
+                throw new Error(error);
+            });
+        return favorites;
+    };
 
-    // getPatents = async props => {
-    //     const patent = await api
-    //         .get('https://api.nasa.gov/techtransfer/patent/?engine&api_key=VN6vYYdFF8xFWzpLWrkziYlITvRz2CHhd7weRl0O')
-    //         .then(response => {
-    //             return response.data;
-    //         })
-    //         .catch(error => {
-    //             throw new Error(error);
-    //         });
-    //     console.log(patent);
-    //     return patent;
-    // };
+    addFavorites = async addFavoriteBody => {
+        const savedPost = await api
+            .post('/favorites/add/', addFavoriteBody, { requireToken: true })
+            .then(response => {
+                return response.data;
+            })
+            .catch(error => {
+                throw new Error(error);
+            });
+        return savedPost;
+    };
+
+    deleteFavorites = id => {
+        return api.delete(`favorites/delete/${id}`, { requireToken: true });
+    };
 }
