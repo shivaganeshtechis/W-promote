@@ -2,13 +2,17 @@ import { createStore as reduxCreateStore, combineReducers, applyMiddleware, comp
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import thunk from 'redux-thunk';
 
-import { PostsReducer } from '../posts/reducers';
+import { UserReducer } from '../users/reducers';
+// import { favoritesReducer } from '../favourite/reducers';
+import { PatentsReducer } from '../patents/reducers';
 
 export default function createStore(history) {
     return reduxCreateStore(
         combineReducers({
             router: connectRouter(history),
-            posts: PostsReducer
+            user: UserReducer,
+            // favourite: favoritesReducer
+            patents: PatentsReducer
         }),
         compose(
             applyMiddleware(routerMiddleware(history), thunk)

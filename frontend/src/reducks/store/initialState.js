@@ -1,9 +1,17 @@
 const initialState = {
-    posts: {
-        results: [],
-        count: 0,
-        next: null,
-        previous: null
+    user: {
+        errors: {
+            email: null,
+            password: null,
+            password_confirm: null,
+            error: null
+        }
+    },
+    favourite: {
+        list: []
+    },
+    patents: {
+        results: []
     }
 };
 

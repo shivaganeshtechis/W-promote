@@ -9,7 +9,7 @@ class Favourite(models.Model):
         db_table = 'favourite'
 
     patent_id = models.CharField(
-        'Patent ID', blank=False, null=False, db_index=True
+        'Patent ID', blank=False, null=False, db_index=True, max_length=120
     )
     user = models.ForeignKey(
         User, on_delete=models.CASCADE,  blank=False, null=True, db_index=True
